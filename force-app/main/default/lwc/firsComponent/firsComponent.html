@@ -1,0 +1,12 @@
+<template>
+    <lightning-card>
+        <h1 align="center" style="color: rebeccapurple;font-size:x-large">Welcome to the portal <b>{name}!!</b> </h1>
+    <br>
+        <h1 align="center" style="font-size: larger;">You can register Athlete HERE</h1>
+       <lightning-record-form object-api-name={objectApiName} fields={fields} onsuccess={handleSuccess}>
+
+       </lightning-record-form>
+
+        
+    </lightning-card>
+</template>

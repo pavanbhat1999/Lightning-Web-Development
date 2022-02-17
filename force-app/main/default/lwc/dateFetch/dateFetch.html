@@ -1,0 +1,104 @@
+<template>
+    <lightning-card  title="Athlete Details" icon-name="standard:account">
+ 
+        <div style="width: 100%; padding: 10px;">
+ 
+            <lightning-input label="Enter Athlete Name" value={nameVal} onchange={handleChange}></lightning-input> <br/>
+ 
+            <lightning-button label="Get Details" variant="Brand" onclick={handleCall}></lightning-button>
+ 
+        </div>
+ 
+ 
+ 
+        <p class="slds-p-horizontal_small">
+ 
+            <template if:true={leads}>
+                
+ 
+                <template for:each={leads} for:item="ld">
+ 
+                    <lightning-layout multiple-rows key={ld}>
+ 
+                        <lightning-layout-item size="2" padding="around-small">
+ 
+                            <div><h1>Name</h1><br/>{ld.Name}</div>
+ 
+                        </lightning-layout-item>
+                        <lightning-layout-item size="2" padding="around-small">
+ 
+                            <div><h1>Gender</h1><br/>{ld.Gender__c}</div>
+ 
+                        </lightning-layout-item>
+                        <lightning-layout-item size="2" padding="around-small">
+ 
+                            <div><h1>Category</h1><br/>{ld.Athlete_Category__c}</div>
+ 
+                        </lightning-layout-item>
+                        <lightning-layout-item size="2" padding="around-small">
+ 
+                            <div><h1>Email</h1><br/>{ld.Email__c}</div>
+ 
+                        </lightning-layout-item>
+                        <lightning-layout-item size="2" padding="around-small">
+ 
+                            <div><h1>Club</h1><br/>{ld.Club__c}</div>
+ 
+                        </lightning-layout-item>
+                        
+ 
+ 
+ 
+ 
+                        <!-- <lightning-layout-item size="2" padding="around-small">
+ 
+                            <div><h1>Age</h1><br/>{ld.Age__c}</div>
+ 
+                        </lightning-layout-item>
+ 
+                        <lightning-layout-item size="2" padding="around-small">
+ 
+                            <div><h1>Address</h1><br/>{ld.Address__c}</div>
+ 
+                        </lightning-layout-item>
+ 
+                        <lightning-layout-item size="2" padding="around-small">
+ 
+                            <div><h1>Contacts</h1><br/>{ld.Phone__c}</div>
+ 
+                        </lightning-layout-item>
+ 
+                        <lightning-layout-item size="2" padding="around-small">
+ 
+                            <div><h1>Club</h1><br/>{ld.Clubs__r.Name}</div>
+ 
+                        </lightning-layout-item>
+ 
+                        <lightning-layout-item size="2" padding="around-small">
+ 
+                            <div><h1>Events</h1><br/>{ld.Event__r.Name}</div>
+ 
+                        </lightning-layout-item> -->
+ 
+                    </lightning-layout>
+ 
+                </template>
+ 
+            </template>
+ 
+ 
+ 
+            <template if:true={errors}>
+ 
+                <div>Error</div>
+ 
+            </template>
+ 
+        </p>
+ 
+    </lightning-card>
+ 
+
+
+
+</template>

@@ -1,0 +1,58 @@
+<template>
+    <p class="slds-p-horizontal_small">
+ 
+        <template if:true={leads}>
+            
+
+            <template for:each={leads} for:item="ld">
+
+                <lightning-layout multiple-rows key={ld}>
+
+                    <lightning-layout-item size="2" padding="around-small">
+
+                        <div><h1>Name</h1><br/>{ld.Name}</div>
+
+                    </lightning-layout-item>
+                    <lightning-layout-item size="2" padding="around-small">
+
+                        <div><h1>Gender</h1><br/>{ld.Gender__c}</div>
+
+                    </lightning-layout-item>
+                    <lightning-layout-item size="2" padding="around-small">
+
+                        <div><h1>Category</h1><br/>{ld.Athlete_Category__c}</div>
+
+                    </lightning-layout-item>
+                    <lightning-layout-item size="2" padding="around-small">
+
+                        <div><h1>Email</h1><br/>{ld.Email__c}</div>
+
+                    </lightning-layout-item>
+                    <lightning-layout-item size="2" padding="around-small">
+
+                        <div><h1>Club</h1><br/>{ld.Club__c}</div>
+
+                    </lightning-layout-item>
+                    
+
+
+
+
+
+
+                </lightning-layout>
+
+            </template>
+
+        </template>
+
+
+
+        <template if:true={errors}>
+
+            <div>Error</div>
+
+        </template>
+
+    </p>
+</template>
