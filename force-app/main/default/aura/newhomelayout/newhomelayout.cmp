@@ -1,19 +1,22 @@
-<aura:component implements="lightning:homeTemplate" description="Main column
- and right sidebar. On a phone, the regions are of equal width">
+<aura:component implements="lightning:homeTemplate" description="3 the regions are of equal width">
+    <aura:attribute name="center" type="Aura.Component[]" />
     <aura:attribute name="left" type="Aura.Component[]" />
     <aura:attribute name="right" type="Aura.Component[]" />
+    <aura:attribute name="left1" type="Aura.Component[]" />
 
-    <div>
-        <lightning:layout>
-            <lightning:layoutItem flexibility="grow"
-                                  class="slds-m-right_small">
-                {!v.left}
-            </lightning:layoutItem>
-            <lightning:layoutItem size="{! $Browser.isDesktop ? '4' : '6' }"
-                                  class="slds-m-left_small">
-                {!v.right}
-            </lightning:layoutItem>
-        </lightning:layout>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_3-of-3">
+            <span>{!v.left}</span>
+        </div>
+        <div class="slds-col slds-size_1-of-3">
+            <span>{!v.center}</span>
+        </div>
+        <div class="slds-col slds-size_1-of-3">
+            <span>{!v.right}</span>
+        </div>  
+        <div class="slds-col slds-size_1-of-3">
+            <span>{!v.left1}</span>
+        </div>       
     </div>
     
 </aura:component>
