@@ -3,9 +3,13 @@
         <h1 align="center" style="color: rebeccapurple;font-size:x-large">Welcome to the portal <b>{name}!!</b> </h1>
     <br>
         <h1 align="center" style="font-size: larger;">You can register Athlete HERE</h1>
-       <lightning-record-form object-api-name={objectApiName} fields={fields} onsuccess={handleSuccess}>
+        <div class="slds-size_2-of-4" style="margin: 0 auto;">
+            <lightning-record-form  object-api-name={objectApiName} fields={fields} onsuccess={handleSuccess}>
 
-       </lightning-record-form>
+            </lightning-record-form>
+            
+        </div>
+       
 
         
     </lightning-card>
