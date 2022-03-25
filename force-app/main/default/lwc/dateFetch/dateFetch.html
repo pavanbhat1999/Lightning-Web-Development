@@ -12,9 +12,16 @@
  
  
         <p class="slds-p-horizontal_small">
- 
+            
+
             <template if:true={leads}>
-                
+                <template if:true={notfound}>
+                    <h1> There are no Athletes for the searched name</h1>
+                </template>
+                <template if:true={success}>
+                    <h1> Athletes Found </h1>
+                </template>
+                <p>Number Of records Found are {leads.length}</p>
  
                 <template for:each={leads} for:item="ld">
  

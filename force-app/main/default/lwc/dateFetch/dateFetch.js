@@ -9,6 +9,10 @@ export default class DataFetch extends LightningElement {
     errors; 
  
     nameVal = ''; 
+
+  success ;
+
+  notfound;
  
     handleChange(event) { 
  
@@ -18,12 +22,23 @@ export default class DataFetch extends LightningElement {
     } 
  
     handleCall() { 
- console.log(getNameByLeads({Name:this.nameVal}));
+    console.log(getNameByLeads({Name:this.nameVal}));
         getNameByLeads({Name:this.nameVal}) 
  
         .then((data) => { 
  
-           this.leads = data; 
+           this.leads = data;
+    console.log(data.length); 
+        if(data.length>0){
+            this.success = "true";
+            this.notfound = undefined;
+            console.log(this.success);
+            console.log("athlete data",this.leads);
+        }
+        else{
+            this.notfound="true";
+            this.success=undefined;
+        }
  
             this.errors = undefined; 
  
@@ -38,6 +53,7 @@ export default class DataFetch extends LightningElement {
  
  
         }); 
- 
+
 }
+
 }
