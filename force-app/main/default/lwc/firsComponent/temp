@@ -1,0 +1,8 @@
+Event__c ev = new Event__c(Name='Test Apex event',Event_type__C='Swimming',Available_categories__C='100M');
+        insert ev;
+ID evid=ev.ID;
+        Athlete__c at = new Athlete__C(Name='Test Apex Athlete');
+        insert at;
+ID atid = at.ID;
+        Event_Registered__c e = new Event_Registered__c(Event__c=evid,Athlete__c=atid,Event_type__C='Swimming',Registered_Event__c='100m');
+       insert e;
