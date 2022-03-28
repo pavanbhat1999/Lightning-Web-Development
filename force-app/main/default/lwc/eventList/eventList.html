@@ -1,43 +1,49 @@
 <template>
     <div class="slds-size_2-of-4 slds-text-align_center" style="margin: 0 auto;">
-    <lightning-card title="Events Available For Registration ">
-    
-    <!-- TODO:DONE <lightning-button label="Get Details" variant="Brand" onclick={handleCall}></lightning-button> -->
- 
-    <template if:true={eventList}>
-        <div class="slds-grid slds-wrap">
-        <template for:each={eventList} for:item="ev">
- 
-            <lightning-layout multiple-rows key={ev}>
-               
-                <div class="slds-col slds-size_3-of-3 slds-theme_shade myslds-box slds-box slds-box_x-small slds-text-align_center slds-var-m-around_x-small">
+        <lightning-card title="Events Available For Registration ">
 
-                <lightning-card title={ev.Name}>
+            <!-- TODO:DONE <lightning-button label="Get Details" variant="Brand" onclick={handleCall}></lightning-button> -->
 
-                    <!-- <h1>{ev.Name}</h1> -->
-                    <!-- <p>.....{ev.Event_Image__c}....</p> -->
-                  <p style="cursor:pointer" onclick={handleShowDetails} data-id={ev.Id}> >>Show Details</p>
+            <template if:true={eventList}>
+                <div class="slds-grid slds-wrap">
+                    <template for:each={eventList} for:item="ev">
 
-                    <lightning-formatted-rich-text value={ev.Event_Image__c}></lightning-formatted-rich-text>
-                 
-                    <lightning-button variant="brand" class="slds-m-around_medium" label="Register For This Event" onclick={navigateToNewRegistration} data-id={ev.Id} data-type={ev.Event_Type__c} data-category={ev.Available_Categories__c}></lightning-button>
-             
-                    <!-- <img src={ev.Event_Image__c} width="100" height="100"/>
+                        <lightning-layout multiple-rows key={ev}>
+
+                            <div
+                                class="slds-col slds-size_3-of-3 slds-theme_shade myslds-box slds-box slds-box_x-small slds-text-align_center slds-var-m-around_x-small">
+
+                                <lightning-card title={ev.Name}>
+
+                                    <!-- <h1>{ev.Name}</h1> -->
+                                    <!-- <p>.....{ev.Event_Image__c}....</p> -->
+                                    <p style="cursor:pointer" onclick={handleShowDetails} data-id={ev.Id}> >>Show
+                                        Details</p>
+
+                                    <lightning-formatted-rich-text value={ev.Event_Image__c}>
+                                    </lightning-formatted-rich-text>
+
+                                    <lightning-button variant="brand" class="slds-var-m-around_medium"
+                                        label="Register For This Event" onclick={navigateToNewRegistration}
+                                        data-id={ev.Id} data-type={ev.Event_Type__c}
+                                        data-category={ev.Available_Categories__c}></lightning-button>
+
+                                    <!-- <img src={ev.Event_Image__c} width="100" height="100"/>
                     <template if:false={ev.Event_Image__c}>
                     <img src={ev.Event_Image__c} width="100" height="100"/>
                     </template> -->
-                   
 
-                </lightning-card>
+
+                                </lightning-card>
+                            </div>
+
+                        </lightning-layout>
+
+                    </template>
                 </div>
-                
-            </lightning-layout>
-                
-    </template>
-        </div>
-</template>
+            </template>
 
 
-</lightning-card>
-</div>
+        </lightning-card>
+    </div>
 </template>

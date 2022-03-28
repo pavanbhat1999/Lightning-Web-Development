@@ -4,13 +4,15 @@ import USER from '@salesforce/user/Id';
 import USERNAME from '@salesforce/schema/User.Name';
 import { getRecord } from 'lightning/uiRecordApi';
 //import the static resource
-import image1 from '@salesforce/resourceUrl/img1';
+import goku from '@salesforce/resourceUrl/haikyu';
 import image2 from '@salesforce/resourceUrl/img2';
+import home from '@salesforce/resourceUrl/home';
 
 export default class LightningCarousel extends LightningElement {
 
-    img1 = image1;
-    img2 = image2;
+    img1 = home;
+    img2 = goku;
+    img3 = image2;
 
     //get user details
     user = USER;
