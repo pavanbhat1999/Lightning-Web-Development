@@ -12,7 +12,7 @@ import getEventList from '@salesforce/apex/EventListFetch.getAllEvents';
 
 export default class EventList  extends NavigationMixin(LightningElement) {
     eventList;
-
+    eventId;
     
 handleCall(){
   getEventList()
@@ -24,9 +24,11 @@ handleCall(){
 }
     
 
-navigateToNewOpportunity() {
+navigateToNewRegistration(event) {
+  console.log("Data from Lwc = "+event.target.dataset.id);
+  this.eventId = event.target.dataset.id;
   const defaultValues = encodeDefaultFieldValues({
-      Event__c : 'a015j00000BMTOmAAP',
+      Event__c : this.eventId,
       Event_Type__c : 'Running',
       Registered_Event__c:'100M;400M'
       
