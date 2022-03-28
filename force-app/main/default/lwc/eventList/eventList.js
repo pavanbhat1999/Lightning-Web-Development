@@ -15,6 +15,9 @@ export default class EventList  extends NavigationMixin(LightningElement) {
     eventId;
     eventType;
     eventCategory;
+
+    showDetails;
+    recordPageUrl;
     
 
 // Direct Fetch
@@ -24,6 +27,22 @@ export default class EventList  extends NavigationMixin(LightningElement) {
     } else if (error) {
         this.error = error;
     }
+}
+
+handleShowDetails(event){
+    console.log("Show Details Clicked = "+event.target.dataset.id);
+    this.showDetails = event.target.dataset.id;
+  
+        // Generate a URL to a User record page
+        this[NavigationMixin.Navigate]({
+            type: 'standard__recordPage',
+            attributes: {
+                recordId: this.showDetails,
+                objectApiName: 'Event__c', // objectApiName is optional
+                actionName: 'view'
+            }
+        });
+    
 }
 
 handleCall(){
