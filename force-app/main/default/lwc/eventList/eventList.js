@@ -58,6 +58,7 @@ handleCall(){
 navigateToNewRegistration(event) {
   console.log("Data from Lwc = "+event.target.dataset.id);
   console.log("Data from Lwc = "+event.target.dataset.type);
+  console.log("Data from Lwc = "+event.target.dataset.category);
   this.eventId = event.target.dataset.id;
   this.eventType = event.target.dataset.type;
   this.eventCategory = event.target.dataset.category;
