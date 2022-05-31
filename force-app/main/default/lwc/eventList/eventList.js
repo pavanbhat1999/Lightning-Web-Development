@@ -65,7 +65,8 @@ navigateToNewRegistration(event) {
   const defaultValues = encodeDefaultFieldValues({
       Event__c : this.eventId,
       Event_Type__c : this.eventType,
-      Registered_Event__c:this.eventCategory
+      Registered_Event__c:this.eventCategory,
+      //demo__c:'1m;2m'
       
   });
   console.log(defaultValues);
