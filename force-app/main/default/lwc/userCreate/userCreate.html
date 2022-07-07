@@ -4,20 +4,27 @@
     <br>
         <h1 align="center" style="font-size: larger;">You can register User here</h1>
         <hr>
-        <h1> Custom Component form</h1>
-
+        
+<!-- 
         <lightning-input label="Enter Alias" value={Alias} onchange={handleChange}></lightning-input> <br/>
 
         <lightning-button label="Register User" onclick={handleSuccess}></lightning-button>
-        
+
         <hr>
         <br>
-        <hr>
-        <h1> Standard record form</h1>
+        <hr style="height: 50;"> -->
+
+
+
+        <h1 style="color: purple;" align="center"> Standard record form</h1>
+
+        <div>
 
        <lightning-record-form mode="edit" object-api-name={objectApiName} fields={fields} onsuccess={handleSuccess} onsubmit={handleSubmit} >
-
+   
        </lightning-record-form>
+
+        </div>
 
         
     </lightning-card>
