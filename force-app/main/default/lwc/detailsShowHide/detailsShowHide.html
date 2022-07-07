@@ -5,8 +5,8 @@
     <template if:true={show}>
         <p>These are the related contacts for account object</p>
         <lightning-input label="Search Contact" value={searchName} onchange={searchContact}></lightning-input> <br/>
-        <lightning-button label="Get Details" variant="Brand" onclick={showContact}></lightning-button>
-        
+        <!-- <lightning-button label="Get Details" variant="Brand" onclick={showContact}></lightning-button>
+         -->
         <template for:each={contactList} for:item="cd">
             <lightning-layout multiple-rows key={cd}>
                 <h1 style="font-weight:bold">{cd.Name}</h1>

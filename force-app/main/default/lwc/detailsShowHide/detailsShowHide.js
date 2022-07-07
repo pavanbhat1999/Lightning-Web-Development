@@ -15,7 +15,7 @@ export default class DetailsShowHide extends LightningElement {
         searchContact(event) { 
  
                 this.searchName = event.target.value; 
-         
+                this.showContact();
          
             } 
   
