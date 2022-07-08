@@ -1,3 +1,5 @@
+import AboutMe from "@salesforce/schema/User.AboutMe";
+
 /**
  * Default settings values
  */
@@ -18,6 +20,11 @@
          fieldName: 'phone',
          label: 'Phone Number',
      },
+     {
+        type: 'dummy',
+        fieldName : 'dummy',
+        label : 'dummy',
+     }
  ];
  
  /**
