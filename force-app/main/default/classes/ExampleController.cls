@@ -5,7 +5,7 @@ public with sharing class ExampleController {
 
         return [ SELECT Id, Name, Industry,
                ( SELECT Id, FirstName, LastName FROM Contacts ),
-               ( SELECT Id, Name, StageName FROM Opportunities ) FROM Account LIMIT 5 ];
+               ( SELECT Id, Name, StageName FROM Opportunities ) FROM Account LIMIT 10 ];
        
     }
    

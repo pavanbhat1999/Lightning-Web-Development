@@ -12,7 +12,7 @@
         </div>        
         <lightning-tree-grid columns={gridColumns}
                              data={gridData}
-                             key-field="Id"
+                             key-field="Id" onrowselection={alertCall}
                              >
         </lightning-tree-grid>
     </div>

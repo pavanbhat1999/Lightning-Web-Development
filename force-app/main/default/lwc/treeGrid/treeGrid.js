@@ -3,6 +3,7 @@ import fetchAccounts from '@salesforce/apex/ExampleController.fetchAccounts';
 
 export default class Example extends LightningElement {
     //removed track
+    currentSelectedRow;
     gridColumns = [{
         type: 'text',
         fieldName: 'Name',
@@ -89,6 +90,24 @@ export default class Example extends LightningElement {
         const grid =  this.template.querySelector( 'lightning-tree-grid' );
         grid.collapseAll();
        
+    }
+    clickToGetExpanded(e) {
+        const grid = this.template.querySelector('lightning-tree-grid');
+        this.currentExpanded = grid.getCurrentExpandedRows();
+    }
+
+    get currentExpandedStr() {
+        return this.currentExpanded.toString();
+    }
+
+    alertCall(){
+        const grid = this.template.querySelector('lightning-tree-grid');
+        this.currentSelectedRow = grid.getSelectedRows();
+        console.log(this.currentSelectedRow);
+        //convert data to json
+        let jsonData = JSON.stringify(this.currentSelectedRow);
+        //alert json data
+        alert(jsonData);
     }
 
 }
