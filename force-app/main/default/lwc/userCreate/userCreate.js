@@ -30,6 +30,7 @@ export default class UserCreate extends LightningElement {
 
     // Alias = '';
     userName = '';
+    department = '';
 
     // handleChange(event){
     //     this.Alias = event.target.value;
@@ -55,6 +56,10 @@ export default class UserCreate extends LightningElement {
         field.Username = field.Alias + '@novo.com';
         this.userName = field.Username;
 
+
+        //TODO: process the department
+        this.department = field.Department+',department2';
+
       console.log('fields  After====> ' + JSON.stringify(field ));
         this.template.querySelector('lightning-record-form').submit(field);
        // this.template.querySelector('.recordFormCalss').submit(field);
@@ -62,7 +67,7 @@ export default class UserCreate extends LightningElement {
     handleSuccess(event) {
         console.log(this.userName);  // save username for retriving userid
 
-        assignPerm({Name : this.userName}).then(
+        assignPerm({Name : this.userName , Department : this.department}).then(
             (data) => {
                 console.log(data);
             }
