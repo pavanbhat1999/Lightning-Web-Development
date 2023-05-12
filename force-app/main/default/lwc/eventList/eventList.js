@@ -1,8 +1,8 @@
 //Genereal Imports
 import { LightningElement, wire } from 'lwc';
-
-import { NavigationMixin } from 'lightning/navigation';
 import { encodeDefaultFieldValues } from 'lightning/pageReferenceUtils';
+import { NavigationMixin } from 'lightning/navigation';
+
 
 
 // Event Specific imports
